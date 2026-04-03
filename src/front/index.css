@@ -1,0 +1,884 @@
+/* ===== GOOGLE FONTS ===== */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend+Deca:wght@300;400;500&display=swap");
+
+/* ===== VARIABLES ===== */
+:root {
+  --verde-oscuro: #162a2b;
+  --verde-medio: #5e6c5b;
+  --gris: #686966;
+  --azul-claro: #d4e1e2;
+  --crema: #ddd9d0;
+  --blanco: #ffffff;
+  --texto: #686966;
+  --texto-oscuro: #162a2b;
+  --hueso: #ddd9d0;
+  --hueso-borde: #c8c4bb;
+  --verde: #162a2b;
+}
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 300;
+  background-color: var(--crema);
+  color: var(--texto);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--crema);
+  border-bottom: 1px solid var(--hueso-borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 68px;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--verde-oscuro);
+  text-decoration: none;
+}
+
+.navbar__logo span {
+  color: var(--verde-medio);
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: var(--texto);
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.navbar__links a:hover {
+  color: var(--verde-oscuro);
+}
+
+.navbar__cta {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.navbar__cta:hover {
+  background-color: var(--verde-medio);
+}
+
+/* ===== HOME ===== */
+.home {
+  padding-top: 68px;
+}
+
+/* ===== HERO ===== */
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 6rem;
+  overflow: hidden;
+}
+
+.hero__video-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(22, 42, 43, 0.85) 35%,
+    rgba(22, 42, 43, 0.3) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.hero__label {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.25rem;
+}
+
+.hero__title {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--blanco);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--azul-claro);
+}
+
+.hero__subtitle {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  max-width: 460px;
+  margin-bottom: 2.5rem;
+}
+
+.hero__cta {
+  background-color: var(--azul-claro);
+  color: var(--verde-oscuro);
+  border: none;
+  padding: 0.9rem 2.5rem;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.hero__cta:hover {
+  background-color: var(--crema);
+  transform: translateY(-2px);
+}
+
+/* ===== STATS ===== */
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem 6rem;
+  background-color: var(--verde-oscuro);
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+}
+
+.stats__num {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--blanco);
+}
+
+.stats__label {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+  max-width: 160px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.stats__divider {
+  width: 1px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== SERVICES ===== */
+.services {
+  padding: 5rem 6rem;
+  background-color: var(--crema);
+  text-align: center;
+}
+
+.services__label {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  margin-bottom: 0.75rem;
+}
+
+.services__title {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--texto-oscuro);
+  margin-bottom: 3rem;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.services__card {
+  background-color: var(--blanco);
+  border: 1px solid var(--hueso-borde);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.services__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(22, 42, 43, 0.08);
+}
+
+.services__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.services__card-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--texto-oscuro);
+  margin-bottom: 0.75rem;
+}
+
+.services__card-desc {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  padding: 5rem 4rem;
+  background-color: var(--azul-claro);
+  text-align: center;
+}
+
+.testimonials__label {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  margin-bottom: 0.75rem;
+}
+
+.testimonials__title {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--texto-oscuro);
+  margin-bottom: 3rem;
+}
+
+.testimonials__grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.testimonials__card {
+  flex: 1;
+  background-color: var(--blanco);
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid var(--hueso-borde);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.testimonials__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(22, 42, 43, 0.1);
+}
+
+.testimonials__img-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.testimonials__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.4s ease;
+}
+
+.testimonials__card:hover .testimonials__img {
+  transform: scale(1.04);
+}
+
+.testimonials__body {
+  padding: 1.25rem 1.5rem;
+}
+
+.testimonials__stars {
+  color: var(--verde-medio);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.testimonials__text {
+  font-family: "DM Serif Display", serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--texto);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.testimonials__name {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--texto-oscuro);
+}
+
+.testimonials__location {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--texto);
+  margin-top: 0.2rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: var(--verde-oscuro);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4rem 6rem 0;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer__logo {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blanco);
+  margin-bottom: 1rem;
+}
+
+.footer__logo span {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__desc {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 280px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer__social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.footer__social:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__col-title {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blanco);
+  margin-bottom: 1.25rem;
+}
+
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer__links a {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: var(--blanco);
+}
+
+.footer__contact {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer__legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__legal a {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__legal a:hover {
+  color: var(--blanco);
+}
+/* ===== MINI ABOUT ===== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+  background-color: var(--blanco);
+}
+
+.about__image-wrapper {
+  overflow: hidden;
+}
+
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+
+.about__image-wrapper:hover .about__image {
+  transform: scale(1.03);
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem;
+  background-color: var(--crema);
+}
+
+.about__label {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  margin-bottom: 1rem;
+}
+
+.about__title {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--texto-oscuro);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.about__title em {
+  font-style: italic;
+  color: var(--verde-medio);
+}
+
+.about__text {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--texto);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.about__cta {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  border: none;
+  padding: 0.9rem 2rem;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.about__cta:hover {
+  background-color: var(--verde-medio);
+  transform: translateY(-2px);
+}
+
+.about__link {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--verde-medio);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.about__link:hover {
+  color: var(--verde-oscuro);
+}
+
+/* ===== RESERVAR PAGE (Nueva Versión) ===== */
+.booking {
+  min-height: 100vh;
+  padding-top: 100px; /* Espacio para el navbar fijo */
+  padding-bottom: 60px;
+  background-color: var(--crema);
+}
+
+/* Hero Sección */
+.booking__hero {
+  padding: 4rem 6rem 2rem;
+}
+
+.booking__hero-title {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--verde-oscuro);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.booking__hero-title em {
+  font-style: italic;
+  color: var(--verde-medio);
+}
+
+.booking__hero-subtitle {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--texto);
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Sección Cómo Funciona */
+.booking__steps {
+  padding: 2rem 6rem;
+}
+
+.booking__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.booking__step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.booking__step-text {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--texto);
+  line-height: 1.5;
+  max-width: 200px;
+  margin-top: 0.5rem;
+}
+
+/* Sección Chatbot */
+.booking__chatbot {
+  padding: 3rem 6rem;
+}
+
+.booking__chatbot-container {
+  max-width: 650px;
+  width: 90%;
+  background-color: var(--blanco);
+  border: 1px solid var(--hueso-borde);
+  border-radius: 4px;
+  padding: 4rem 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.booking__chatbot-placeholder {
+  height: 400px;
+  background-color: var(--azul-claro);
+  border: 2px dashed var(--hueso-borde);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.booking__chatbot-placeholder:hover {
+  border-color: var(--verde-medio);
+}
+
+.booking__chatbot-icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.booking__chatbot-message {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--verde-oscuro);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Sección CTA Alternativo */
+.booking__contact {
+  padding: 2rem 6rem 4rem;
+  text-align: center;
+}
+
+.booking__contact-label {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  margin-bottom: 0.75rem;
+}
+
+.booking__contact-text {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--texto);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+}
+
+.booking__contact-details {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.88rem;
+  color: var(--texto);
+}
+
+.booking__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.booking__contact-item strong {
+  font-weight: 500;
+  color: var(--texto-oscuro);
+}
+
+/* ===== WORKING PROGRESS PAGE ===== */
+.working {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--crema); /* Mismo fondo que el resto */
+  padding-top: 68px; /* Espacio para el navbar */
+}
+
+.working__container {
+  text-align: center;
+}
+
+/* El Spinner de texto */
+.working__spinner {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--verde-oscuro);
+  display: inline-block;
+  margin-bottom: 6rem;
+  animation: spinText 4s linear infinite;
+  opacity: 0.8;
+}
+
+.working__spinner span {
+  color: var(--verde-medio);
+}
+
+.working__text {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.working__subtext {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9rem;
+  color: var(--texto);
+  font-weight: 300;
+}
+
+/* Animación de rotación */
+@keyframes spinText {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

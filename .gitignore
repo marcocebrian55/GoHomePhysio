@@ -80,3 +80,11 @@ database.database
 database.db
 diagram.png
 __pycache__/
+
+node_modules/
+__pycache__/
+*.pyc
+.env
+.venv/
+dist/
+instance/
