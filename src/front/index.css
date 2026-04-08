@@ -1384,39 +1384,80 @@ body {
   .quienes__cta-title {
     font-size: 2rem;
   }
+}
+/* RESERVAR */
+.booking {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: var(--crema);
+  /* FUERZA EL CENTRADO DE TODOS LOS BLOQUES HIJOS */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
-  /* RESERVAR */
-  .booking {
-    padding-top: 80px;
-  }
+.booking__hero {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+  /* CENTRA EL TÍTULO Y EL SUBTÍTULO */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .booking__hero {
-    padding: 2rem 1.5rem 1rem;
-  }
+.booking__steps {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
 
-  .booking__steps {
-    padding: 1.5rem;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+.booking__chatbot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
 
-  .booking__chatbot {
-    padding: 2rem 1.5rem;
-  }
+.booking__chatbot-container {
+  width: 100%;
+  max-width: 450px; /* Ancho ideal del bot */
+  height: 650px; /* Altura para que no se corte el input */
+  background-color: var(--blanco);
+  border: 1px solid var(--hueso-borde);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0 !important; /* ¡IMPORTANTE! 0 padding para que el bot quepa bien */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 
-  .booking__chatbot-container {
-    padding: 2rem 1.5rem;
-  }
+.booking__contact {
+  width: 100%;
+  padding: 2rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-  .booking__contact {
-    padding: 2rem 1.5rem 3rem;
-  }
-
-  .booking__contact-details {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
+.booking__contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.booking__retell-iframe {
+  width: 100%; /* El bot ocupa todo el ancho del div */
+  height: 100%; /* El bot ocupa toda la altura del div */
+  border: none;
+  display: block;
 }
 
 /* Tablet */
@@ -1507,4 +1548,31 @@ body {
   object-fit: contain;
   margin-bottom: 1rem;
   opacity: 0.9;
+}
+
+/* ===== RESERVAR RESPONSIVE (Móvil) ===== */
+
+@media (max-width: 768px) {
+  .booking {
+    padding-top: 100px;
+  }
+
+  .booking__steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .booking__chatbot-container {
+    height: 550px;
+  }
+}
+@media (max-width: 768px) {
+  .booking__contact-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .booking__chatbot-container {
+    height: 550px;
+  }
 }

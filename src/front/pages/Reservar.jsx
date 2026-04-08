@@ -36,12 +36,12 @@ export const Reservar = () => {
             {/* Sección Chatbot - Centrado y Prominente */}
             <section className="booking__chatbot d-flex align-items-center justify-content-center">
                 {/* Placeholder para el chatbot widget */}
-                <div className="booking__chatbot-container rounded text-center">
-                    {/* Aquí iría el script o widget del chatbot */}
-                    <div className="booking__chatbot-placeholder rounded">
-                        <span className="booking__chatbot-icon">🤖</span>
-                        <p className="booking__chatbot-message">Hola, soy el asistente de Go Home Physio. ¿En qué puedo ayudarte?</p>
-                    </div>
+                <div className="booking__chatbot-container">
+                    <iframe
+                        src="https://retell.isman8nproyect.cloud"
+                        className="booking__retell-iframe"
+                        allow="microphone">
+                    </iframe>
                 </div>
             </section>
 
