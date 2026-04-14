@@ -1,81 +1,101 @@
-# Plantilla de WebApp con React JS y Flask API
+# GoHomePhysio - Tu Fisioterapeuta a Domicilio, 24/7
 
-Construye aplicaciones web usando React.js para el front end y python/flask para tu API backend.
+> 🚀 **Conectando salud y hogar a través de tecnología.**
 
-- La documentación se puede encontrar aquí: https://4geeks.com/docs/start/react-flask-template
-- Aquí hay un video sobre [cómo usar esta plantilla](https://www.youtube.com/watch?v=qBz6Ddd2m38)
-- Integrado con Pipenv para la gestión de paquetes.
-- Despliegue rápido a Render [en solo unos pocos pasos aquí](https://4geeks.com/es/docs/start/despliega-con-render-com).
-- Uso del archivo .env.
-- Integración de SQLAlchemy para la abstracción de bases de datos.
+---
 
-### 1) Instalación:
+### ¿Qué es GoHomePhysio?
 
-> Si usas Github Codespaces (recomendado) o Gitpod, esta plantilla ya vendrá con Python, Node y la base de datos Posgres instalados. Si estás trabajando localmente, asegúrate de instalar Python 3.10, Node.
+Una plataforma moderna y accesible que facilita el acceso a servicios de fisioterapia profesional a domicilio. El proyecto nació de la necesidad de simplificar la vida de pacientes que, por movilidad reducida o falta de tiempo, no pueden desplazarse a una clínica.
 
-Se recomienda instalar el backend primero, asegúrate de tener Python 3.10, Pipenv y un motor de base de datos (se recomienda Posgres).
+Este sitio web no es solo una tarjeta de visita digital; es un sistema diseñado para el **usuario** (el paciente) y para el **profesional** (el fisioterapeuta), mejorando la comunicación y la gestión del servicio.
 
-1. Instala los paquetes de python: `$ pipenv install`
-2. Crea un archivo .env basado en el .env.example: `$ cp .env.example .env`
-3. Instala tu motor de base de datos y crea tu base de datos, dependiendo de tu base de datos, debes crear una variable DATABASE_URL con uno de los valores posibles, asegúrate de reemplazar los valores con la información de tu base de datos:
+---
 
-| Motor     | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgres  | postgres://username:password@localhost:5432/example |
+### La Joya de la Corona: El Asistente IA 🤖
 
-4. Migra las migraciones: `$ pipenv run migrate` (omite si no has hecho cambios en los modelos en `./src/api/models.py`)
-5. Ejecuta las migraciones: `$ pipenv run upgrade`
-6. Ejecuta la aplicación: `$ pipenv run start`
+[AQUÍ_PODRÍAS_INSERTAR_UNA_IMAGEN_O_GIF_DEL_BOT.gif]
 
-> Nota: Los usuarios de Codespaces pueden conectarse a psql escribiendo: `psql -h localhost -U gitpod example`
+**¿Por qué un bot en una web de fisios?**
 
-### Deshacer una migración
+El mayor reto para un paciente es saber si su dolencia es grave o qué tipo de tratamiento necesita. Este **Asistente de Fisioterapia IA** (integrado con OpenAI) actúa como un primer punto de contacto inteligente.
 
-También puedes deshacer una migración ejecutando
+* **Triage Preliminar:** Ayuda al paciente a describir sus síntomas mediante preguntas sencillas.
+* **Preguntas Frecuentes:** Responde dudas comunes sobre tratamientos, precios o duración de las sesiones, liberando tiempo al profesional.
+* **Conexión Directa:** Tras la interacción, el bot facilita el contacto final para la reserva.
 
-```sh
-$ pipenv run downgrade
-```
+> "El objetivo no es sustituir al fisio, sino hacer que la primera consulta sea más fluida, informada y cercana."
 
-### Población de la tabla de usuarios en el backend
+---
 
-Para insertar usuarios de prueba en la base de datos, ejecuta el siguiente comando:
+### Tecnologías Utilizadas
 
-```sh
-$ flask insert-test-users 5
-```
+Este proyecto es un reflejo de mi capacidad de aprendizaje y adaptación, utilizando una pila tecnológica moderna y eficaz:
 
-Y verás el siguiente mensaje:
+| Tecnología | Descripción | Uso en el Proyecto |
+| :--- | :--- | :--- |
+| **React** | Framework Frontend | Creación de una interfaz de usuario dinámica, responsiva y rápida. Manejo de estado para el flujo del chatbot. |
+| **HTML5 / CSS3** | Estándares Web | Estructura y diseño limpio, adaptable a todos los dispositivos (Mobile First). |
+| **JavaScript (ES6+)** | Lenguaje Principal | Lógica del frontal, validaciones de formularios y control de animaciones. |
+| **OpenAI API** | Inteligencia Artificial | Cerebro del asistente IA para procesamiento de lenguaje natural y respuestas inteligentes. |
+| **[INSERTAR_FRAMEWORK_BACKEND, ej: Node.js/Python]** | Backend/Servidor | Proxy seguro para la comunicación con la API de OpenAI (sin exponer claves). |
 
-```
-    Creating test users
-    test_user1@test.com created.
-    test_user2@test.com created.
-    test_user3@test.com created.
-    test_user4@test.com created.
-    test_user5@test.com created.
-    Users created successfully!
-```
+---
 
-### **Nota importante para la base de datos y los datos dentro de ella**
+### Funcionalidades Clave
 
-Cada entorno de Github Codespace tendrá **su propia base de datos**, por lo que si estás trabajando con más personas, cada uno tendrá una base de datos diferente y diferentes registros dentro de ella. Estos datos **se perderán**, así que no pases demasiado tiempo creando registros manualmente para pruebas, en su lugar, puedes automatizar la adición de registros a tu base de datos editando el archivo ```commands.py``` dentro de la carpeta ```/src/api```. Edita la línea 32 de la función ```insert_test_data``` para insertar los datos según tu modelo (usa la función ```insert_test_users``` anterior como ejemplo). Luego, todo lo que necesitas hacer es ejecutar ```pipenv run insert-test-data```.
+* ✅ **Chatbot de IA Interactivo:** Asistente conversacional disponible las 24h.
+* ✅ **Landing Page Responsiva:** Navegación intuitiva y diseño profesional en PC y móvil.
+* ✅ **[Opcional: Sistema de Reserva/Formulario]:** Sección para solicitar una cita y describir la dolencia.
+* ✅ **Galería de Servicios:** Explicación clara de los tratamientos ofrecidos.
+* ✅ **Sección de Contacto/Mapa:** Facilita la localización y contacto directo.
 
-### Instalación manual del Front-End:
+---
 
--   Asegúrate de estar usando la versión 20 de node y de que ya hayas instalado y ejecutado correctamente el backend.
+### Roadmap Futuro (Lo que me gustaría añadir)
 
-1. Instala los paquetes: `$ npm install`
-2. ¡Empieza a codificar! inicia el servidor de desarrollo de webpack `$ npm run start`
+* [ ] **Sistema de Pagos Integrado:** Permitir al paciente pagar la sesión online de forma segura.
+* [ ] **Panel del Fisioterapeuta:** Una sección privada donde el profesional puede ver y gestionar sus citas agendadas y el historial de triaje de los bots.
+* [ ] **Integración con Google Maps API:** Para optimizar las rutas de desplazamiento del fisioterapeuta a domicilio.
+* [ ] **Mejorar el Bot:** Entrenar el modelo de IA con una base de conocimientos médica más específica de la fisioterapia.
 
-## ¡Publica tu sitio web!
+---
 
-Esta plantilla está 100% lista para desplegarse con Render.com y Heroku en cuestión de minutos. Por favor, lee la [documentación oficial al respecto](https://4geeks.com/docs/start/deploy-to-render-com).
+### Instalación y Uso (Para Desarrolladores)
 
-### Contribuyentes
+Si eres un desarrollador y quieres ver cómo funciona el proyecto localmente, sigue estos pasos:
 
-Esta plantilla fue construida como parte del [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) de 4Geeks Academy por [Alejandro Sanchez](https://twitter.com/alesanchezr) y muchos otros contribuyentes. Descubre más sobre nuestro [Curso de Desarrollador Full Stack](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) y [Bootcamp de Ciencia de Datos](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+1.  **Clona el repositorio:**
+    `git clone https://github.com/marcocebrian55/GoHomePhysio.git`
 
-Puedes encontrar otras plantillas y recursos como este en la [página de github de la escuela](https://github.com/4geeksacademy/).
+2.  **Instala las dependencias del frontend:**
+    `cd GoHomePhysio/frontend`
+    `npm install`
+
+3.  **[Opcional: Instala las dependencias del backend]:**
+    `cd ../backend`
+    `[npm_install_o_pip_install]`
+
+4.  **Configura las Variables de Entorno (.env):**
+    * Crea un archivo `.env` en la carpeta `backend/`.
+    * Añade tu clave de API de OpenAI (¡nunca la subas a GitHub!):
+        `OPENAI_API_KEY=[TU_API_KEY]`
+
+5.  **Inicia los servidores:**
+    * Frontend: `npm start` (en la carpeta `frontend/`)
+    * Backend: `[npm_start_o_python_app.py]` (en la carpeta `backend/`)
+
+---
+
+### Sobre Mí
+
+Soy **[Tu Nombre]**, un desarrollador Junior Full Stack con hambre de aprender y crecer. Me encanta resolver problemas reales y este proyecto es una muestra de mi compromiso por crear tecnología que sea útil para las personas.
+
+Me considero una persona curiosa, humilde y con muchas ganas de sumar a un equipo. Si buscas a alguien con energía y que disfrute picando código para crear soluciones, ¡hablemos!
+
+* **GitHub:** [Tu enlace a GitHub]
+* **LinkedIn:** [Tu enlace a LinkedIn]
+
+---
+
+> 🚀 "El mejor código es el que mejora la vida de alguien."
