@@ -53,8 +53,8 @@ export const Reservar = () => {
                 </p>
                 <div className="booking__contact-details d-flex gap-4">
 
-                    <div className="booking__contact-item">💬 <strong>WhatsApp:</strong> +34 900 123 456</div>
-                    <div className="booking__contact-item">✉️ <strong>Email:</strong> hola@gohomephysio.es</div>
+                    <div className="booking__contact-item">💬 <strong>WhatsApp:</strong> +34  604 835 848</div>
+                    <div className="booking__contact-item">✉️ <strong>Email:</strong> gohomephysio@gmail.com</div>
                 </div>
             </section>
         </div>

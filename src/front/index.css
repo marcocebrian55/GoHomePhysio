@@ -227,47 +227,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===== STATS ===== */
-.stats {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 3rem 6rem;
-  background-color: var(--verde-oscuro);
-}
-
-.stats__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.4rem;
-}
-
-.stats__num {
-  font-family: "DM Serif Display", serif;
-  font-size: 2.2rem;
-  font-weight: 400;
-  color: var(--blanco);
-}
-
-.stats__label {
-  font-family: "Lexend Deca", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.05em;
-  max-width: 160px;
-  text-align: center;
-  line-height: 1.5;
-}
-
-.stats__divider {
-  width: 1px;
-  height: 48px;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
 /* ===== SERVICES ===== */
 .services {
   padding: 5rem 6rem;
@@ -297,6 +256,15 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+}
+
+/* Grid de 5 tarjetas: 4 arriba + 1 centrada abajo */
+.services__grid--5 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.services__grid--5 .services__card:last-child {
+  grid-column: 2 / 4;
 }
 
 .services__card {
@@ -350,6 +318,24 @@ body {
 
 .services__card-link:hover {
   color: var(--verde-oscuro);
+}
+
+/* Bloque negativo al final de servicios */
+.services__negative {
+  margin-top: 3rem;
+  padding: 1.5rem 3rem;
+  border-top: 1px solid var(--hueso-borde);
+}
+
+.services__negative-text {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gris);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
 /* ===== MINI ABOUT ===== */
@@ -461,6 +447,89 @@ body {
   color: var(--verde-oscuro);
 }
 
+/* ===== FAQ ===== */
+.faq {
+  padding: 5rem 6rem;
+  background-color: var(--blanco);
+  text-align: center;
+}
+
+.faq__label {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  margin-bottom: 0.75rem;
+}
+
+.faq__title {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--texto-oscuro);
+  margin-bottom: 3rem;
+}
+
+.faq__list {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--hueso-borde);
+}
+
+.faq__item:first-child {
+  border-top: 1px solid var(--hueso-borde);
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--texto-oscuro);
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.faq__question:hover {
+  color: var(--verde-medio);
+}
+
+.faq__arrow {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--verde-medio);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.faq__item--open .faq__arrow {
+  transform: rotate(0deg);
+}
+
+.faq__answer {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--texto);
+  line-height: 1.8;
+  padding-bottom: 1.25rem;
+  max-width: 680px;
+}
+
 /* ===== TESTIMONIALS ===== */
 .testimonials {
   padding: 5rem 4rem;
@@ -507,6 +576,15 @@ body {
 .testimonials__card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(22, 42, 43, 0.1);
+}
+
+/* Tarjetas sin foto — el body ocupa todo */
+.testimonials__card--text .testimonials__body {
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .testimonials__img-wrapper {
@@ -1246,26 +1324,19 @@ body {
     padding: 1rem;
   }
 
-  /* STATS */
-  .stats {
-    flex-direction: column;
-    padding: 2.5rem 2rem;
-    gap: 1.5rem;
-  }
-
-  .stats__divider {
-    width: 48px;
-    height: 1px;
-  }
-
   /* SERVICES */
   .services {
     padding: 3.5rem 1.5rem;
   }
 
-  .services__grid {
+  .services__grid,
+  .services__grid--5 {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
+
+  .services__grid--5 .services__card:last-child {
+    grid-column: 1 / -1;
   }
 
   .services__card {
@@ -1274,6 +1345,10 @@ body {
 
   .services__card-title {
     font-size: 1rem;
+  }
+
+  .services__negative {
+    padding: 1.25rem 0;
   }
 
   /* ABOUT */
@@ -1302,6 +1377,11 @@ body {
   .about__cta {
     width: 100%;
     text-align: center;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 3.5rem 1.5rem;
   }
 
   /* TESTIMONIALS */
@@ -1385,13 +1465,13 @@ body {
     font-size: 2rem;
   }
 }
+
 /* RESERVAR */
 .booking {
   min-height: 100vh;
   padding-top: 120px;
   padding-bottom: 60px;
   background-color: var(--crema);
-  /* FUERZA EL CENTRADO DE TODOS LOS BLOQUES HIJOS */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1404,7 +1484,6 @@ body {
   text-align: center;
   padding: 0 1.5rem;
   margin-bottom: 3rem;
-  /* CENTRA EL TÍTULO Y EL SUBTÍTULO */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1428,13 +1507,13 @@ body {
 
 .booking__chatbot-container {
   width: 100%;
-  max-width: 450px; /* Ancho ideal del bot */
-  height: 650px; /* Altura para que no se corte el input */
+  max-width: 450px;
+  height: 650px;
   background-color: var(--blanco);
   border: 1px solid var(--hueso-borde);
   border-radius: 12px;
   overflow: hidden;
-  padding: 0 !important; /* ¡IMPORTANTE! 0 padding para que el bot quepa bien */
+  padding: 0 !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -1453,9 +1532,10 @@ body {
   gap: 1rem;
   align-items: center;
 }
+
 .booking__retell-iframe {
-  width: 100%; /* El bot ocupa todo el ancho del div */
-  height: 100%; /* El bot ocupa toda la altura del div */
+  width: 100%;
+  height: 100%;
   border: none;
   display: block;
 }
@@ -1470,16 +1550,17 @@ body {
     padding: 0 3rem;
   }
 
-  .stats {
-    padding: 2.5rem 3rem;
-  }
-
   .services {
     padding: 4rem 3rem;
   }
 
-  .services__grid {
+  .services__grid,
+  .services__grid--5 {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services__grid--5 .services__card:last-child {
+    grid-column: 1 / -1;
   }
 
   .about__content {
@@ -1505,6 +1586,10 @@ body {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+
+  .faq {
+    padding: 4rem 3rem;
   }
 
   .quienes__hero {
@@ -1536,12 +1621,14 @@ body {
     z-index: 999;
   }
 }
+
 .quienes__hero-logo {
   height: 100px;
   width: auto;
   margin-bottom: 2rem;
   opacity: 0.85;
 }
+
 .footer__logo-img {
   height: 80px;
   width: auto;
@@ -1550,8 +1637,7 @@ body {
   opacity: 0.9;
 }
 
-/* ===== RESERVAR RESPONSIVE (Móvil) ===== */
-
+/* RESERVAR RESPONSIVE (Móvil) */
 @media (max-width: 768px) {
   .booking {
     padding-top: 100px;
@@ -1566,13 +1652,9 @@ body {
   .booking__chatbot-container {
     height: 550px;
   }
-}
-@media (max-width: 768px) {
+
   .booking__contact-details {
     flex-direction: column;
     gap: 1rem;
-  }
-  .booking__chatbot-container {
-    height: 550px;
   }
 }
