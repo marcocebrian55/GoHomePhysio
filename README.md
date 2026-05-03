@@ -87,15 +87,5 @@ Si eres un desarrollador y quieres ver cómo funciona el proyecto localmente, si
 
 ---
 
-### Sobre Mí
-
-Soy **[Tu Nombre]**, un desarrollador Junior Full Stack con hambre de aprender y crecer. Me encanta resolver problemas reales y este proyecto es una muestra de mi compromiso por crear tecnología que sea útil para las personas.
-
-Me considero una persona curiosa, humilde y con muchas ganas de sumar a un equipo. Si buscas a alguien con energía y que disfrute picando código para crear soluciones, ¡hablemos!
-
-* **GitHub:** [Tu enlace a GitHub]
-* **LinkedIn:** [Tu enlace a LinkedIn]
-
----
 
 > 🚀 "El mejor código es el que mejora la vida de alguien."
