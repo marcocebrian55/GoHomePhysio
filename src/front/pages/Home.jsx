@@ -93,9 +93,9 @@ export const Home = () => {
 						<em>NO</em> solo damos masajes.
 					</h1>
 					<p className="hero__subtitle">
-						Usamos las manos para tratar tu dolor, pero usamos el movimiento
-						para solucionarlo definitivamente. Resolvemos tu dolor involucrándonos
-						en tu problema, en tu contexto, en tu hogar.
+						Usamos las manos para tratar tu <strong>dolor</strong>, pero usamos el movimiento
+						para solucionarlo <strong>definitivamente</strong>. Resolvemos tu dolor involucrándonos
+						en tu <strong>problema</strong>, en tu contexto, en tu <strong>hogar</strong>.
 					</p>
 					<Link to="/reservar">
 						<button className="hero__cta">Reservar cita ahora</button>
