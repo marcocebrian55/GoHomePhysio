@@ -221,7 +221,7 @@ export const Home = () => {
 						{
 							name: "Rosa",
 							location: "Arucas",
-							text: "Queremos agradecer de corazón el excelente trabajo de Fabio que trató a mi abuela tras su operación de prótesis de cadera. Desde el primer momento demostró una gran profesionalidad, pero sobre todo una calidad humana excepcional. Gracias a su dedicación, mi abuela avanzó muy rápido y hoy en día está genial de la cadera. Incluso el médico confirmó que la recuperación había sido muy buena."
+							text: "Queremos agradecer de corazón el excelente trabajo de Fabio que trató a mi abuela tras su operación de prótesis de cadera. Desde el primer momento demostró una gran profesionalidad, pero sobre todo una calidad humana excepcional. Acudía a su domicilio y trabajaba con ella siempre con muchísimo respeto, paciencia y cariño, algo fundamental en su proceso de recuperación. Gracias a su dedicación y a su forma de tratarla, mi abuela avanzó muy rápido y hoy en día está genial de la cadera. Incluso el médico nos confirmó que la recuperación había sido muy buena y que el trabajo realizado había sido excelente. Sin duda, un profesional totalmente recomendable."
 						},
 						{
 							name: "Pilar",
